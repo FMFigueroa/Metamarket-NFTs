@@ -14,7 +14,7 @@ const style = {
 
 export default function Home() {
 
-  const { address, connectWallet } = useWeb3();
+  const { address, connectWallet } = useWeb3(); //hook to get the address of the connected wallet
 
   const welcomeUser = (userName, toastHandler = toast) => {
     toastHandler.success(
@@ -54,7 +54,7 @@ export default function Home() {
               Connect Wallet
             </button>
             <div className={style.details}>
-              You need Chrome to be
+              You need Metamask to be
               <br /> able to run this app.
             </div>
           </div>
