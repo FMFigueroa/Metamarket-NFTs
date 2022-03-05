@@ -13,7 +13,7 @@ import NFTCard from '../../components/NFTCard';
 
 
 const style = {
-    bannerImageContainer: `h-[20vh] w-screen overflow-hidden flex justify-center items-center`,
+    bannerImageContainer: `h-[25vh] w-screen overflow-hidden flex justify-center items-center`,
     bannerImage: `w-full object-cover`,
     infoContainer: `w-screen px-20`,
     midRow: `w-full flex justify-center text-white`,
@@ -48,9 +48,7 @@ const Collection = () => {
         if (!provider) return
 
         const sdk = new ThirdwebSDK(
-            provider.getSigner(),
-            'https://eth-rinkeby.alchemyapi.io/v2/zXW4fx8zVh66loWUKY4Im_tVbqHGr2Vj'
-        )
+            provider.getSigner())
         return sdk.getNFTModule(collectionId)
     }, [provider])
 
@@ -68,12 +66,8 @@ const Collection = () => {
         if (!provider) return
 
         const sdk = new ThirdwebSDK(
-            provider.getSigner(),
-            'https://eth-rinkeby.alchemyapi.io/v2/zXW4fx8zVh66loWUKY4Im_tVbqHGr2Vj'
-        )
-        return sdk.getMarketplaceModule(
-            '0xdb308805b4F7545E049D05CD7CEaCc2CD5717E3d'
-        )
+            provider.getSigner())
+        return sdk.getMarketplaceModule('0xdb308805b4F7545E049D05CD7CEaCc2CD5717E3d')
     }, [provider])
 
     // get all listings in the collection
@@ -94,7 +88,7 @@ const Collection = () => {
             description
           }`
 
-        const collectionData = await sanityClient.fetch(query) //Result of the query
+        const collectionData = await sanityClient.fetch(query) //Result of the query to the Sanity DB.
 
         console.log(collectionData, '🔥')
 
@@ -196,7 +190,7 @@ const Collection = () => {
                                     alt="eth"
                                     className={style.ethLogo}
                                 />
-                                {collection?.volumeTraded}.5K
+                                {collection?.volumeTraded}.8K
                             </div>
                             <div className={style.statName}>volume traded</div>
                         </div>
@@ -206,7 +200,7 @@ const Collection = () => {
                     <div className={style.description}>{collection?.description}</div>
                 </div>
             </div>
-            <div className="flex flex-wrap gap-10 px-20 ">
+            <div className="flex justify-center flex-wrap gap-8 px-20 my-20">
                 {nfts.map((nftItem, id) => (
                     <NFTCard
                         key={id}

@@ -3,7 +3,7 @@ import { BiHeart } from 'react-icons/bi'
 import Router from 'next/router'
 
 const style = {
-    wrapper: `bg-[#303339] w-[20rem] h-[28rem] my-10 rounded-2xl overflow-hidden cursor-pointer`,
+    wrapper: `bg-[#303339] w-[18rem] h-[25rem] rounded-2xl overflow-hidden cursor-pointer hover:scale-105`,
     imgContainer: `h-2/3 w-full overflow-hidden flex justify-center items-center`,
     nftImg: `w-full object-cover`,
     details: `pt-5 p-5`,
